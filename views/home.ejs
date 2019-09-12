@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>home page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+       <div class="container">
+           <br>
+           <div class="row">
+             <div class="col-12" dir="rtl" style="text-align: right">
+              <a class="btn btn-primary" href="/logout">logout</a></div>
+           </div>
+           <br>
+           <div class="row justify-content-center" style="padding-top: 10px">
+              <% for(var i=0; i<data.length; i++) {%>
+             <div class="col-sm-5" style="padding-top: 10px">
+                    <div class="card" >
+                     <img src="http://localhost:4000/uploads/<%-data[i].image%>" class="card-img-top"
+                      alt="no image" style="height: 250px">
+                            <div class="card-body">
+                              <h5 class="card-title">address : <%-data[i].address%></h5>
+                              <p class="card-text">floor number : <%-data[i].floorNumber%></p>
+                              <p class="card-text">room number : <%-data[i].roomNumber%></p>
+                              <p class="card-text">room length : <%-data[i].roomLength%></p>
+                              <p class="card-text">room width : <%-data[i].roomWidth%></p>
+                              <button onclick="getIDPost('<%-data[i]._id%>')"
+                                 class="btn btn-primary">Book Now </button>
+                            </div>
+                     </div>
+             </div>
+             <% } %>
+           </div>
+                
+              <br><br>
+            <div class="row text-center justify-content-center">
+            <% for(var i=0; i<=Math.ceil(data.length/4.0); i++) {%>
+              <a class="btn btn-primary" href="/home/<%-i%>" ><%-i%></a> &nbsp;
+            <% } %>
+          </div>
+          <br> <br>
+       </div> 
+       <script>
+       function getIDPost(id)
+       {
+           console.log(id);
+       }
+       </script>
+    </body>
+</html>

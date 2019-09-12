@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            register page
+        </title>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../uploads/login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+                  <div class="card-img-left d-none d-md-flex">
+                     <!-- Background image for card set in CSS! -->
+                  </div>
+                  <div class="card-body">
+                    <div class="col-12">
+                       <button id="asUser" class="btn btn-primary btn-rounded" onclick="asUserFun()">as User</button> &nbsp;
+                       <button id="asOwner" class="btn btn-primary btn-rounded" onclick="asOwnerFun()">as Owner</button>
+                    </div>
+                    <br>
+                    <h5 class="card-title text-center">Register</h5>
+                    <form class="form-signin" method="post" id="myForm">
+                      <div class="form-label-group">
+                        <input type="text" id="inputUserame" class="form-control" placeholder="Username" 
+                        required name="userName" minlength="3">
+                      </div>
+        
+                      <div class="form-label-group">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" 
+                        required name="email" minlength="10">
+                      </div>
+                      
+                      <hr>
+        
+                      <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                         required name="password" minlength="6">
+                      </div>
+                      
+                      <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" 
+                      value="Register" id="submitBtn">
+                      <a class="d-block text-center mt-2 small" href="/login">Sign In</a> 
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+          document.getElementById("submitBtn").disabled=true;
+          function asUserFun()
+          {
+            document.getElementById("asUser").disabled=true;
+            document.getElementById("asOwner").disabled=false;
+            document.getElementById("submitBtn").disabled=false;
+            document.getElementById("myForm").action = "/registerUser";
+          }
+         function asOwnerFun()
+          {
+            document.getElementById("asUser").disabled=false;
+            document.getElementById("asOwner").disabled=true;
+            document.getElementById("submitBtn").disabled=false;
+            document.getElementById("myForm").action = "/registerOwner";
+          }
+          </script>
+    </body>
+</html>

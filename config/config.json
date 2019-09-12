@@ -1,0 +1,14 @@
+{
+    "development": {
+        "PORT": 4000,
+        "MONGODB_URI":"mongodb+srv://ali95880:08081995ali@cluster0-1bit0.mongodb.net/alamatDB?retryWrites=true&w=majority",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "1000m"
+    },
+    "production": {
+        "PORT": 3000,
+        "MONGODB_URI":"mongodb+srv://xxxxx:xxxxx@cluster0-1bit0.mongodb.net/xxxxx?retryWrites=true&w=majority",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "1000m"
+    }
+}

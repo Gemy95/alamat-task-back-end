@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>
+            add post 
+        </title>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../uploads/addPost.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+            <div class="container">
+                    <div class="row">
+                      <div class="col-lg-10 col-xl-9 mx-auto">
+                        <div class="card card-signin flex-row my-5">
+                          <div class="card-img-left d-none d-md-flex">
+                             <!-- Background image for card set in CSS! -->
+                          </div>
+                
+                          <div class="card-body">
+                                <br>
+                            <h5 class="card-title text-center"><b>add New Post</b></h5>
+                            <br>
+                            <form class="form-signin" method="post" id="myForm" action="/addPost"
+                             enctype="multipart/form-data">
+                
+                             <div class="d-flex">
+                                <label>upload image:</label>
+                                <input type="file" id="inputImage" accept="image/*" name="image"
+                                   required>
+                            </div>
+
+                              <div class="form-label-group" style="padding-top: 10px">
+                                <input type="text" class="form-control" id="inputAddress"   
+                                     placeholder="address" minlength="15" maxlength="25"
+                                      name="address" required >
+                              </div>
+
+                              <div class="form-label-group">
+                                <input type="number" class="form-control" id="inputFloorNumber"   
+                                 placeholder="floor Number" name="floorNumber" required min="1">
+                              </div>
+                             
+                              <div class="form-label-group">
+                                <input type="number" id="inputRoomNumber" class="form-control" 
+                                placeholder="room Number" name="roomNumber" required min="1">             
+                              </div>
+
+                              <div class="form-label-group">
+                                <input type="number" id="inputRoomLength" class="form-control" 
+                                    placeholder="room Length" name="roomLength" required min="1">             
+                              </div>
+
+                              <div class="form-label-group">
+                                <input type="number" id="inputRoomWidth" class="form-control" 
+                                        placeholder="room width" name="roomWidth" required min="1">             
+                             </div>
+
+                              <input type="submit" class="btn btn-lg btn-primary btn-block text-uppercase"
+                               value="Add" id="submitBtn">
+                            </form>
+         
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    </body>
+</html>
